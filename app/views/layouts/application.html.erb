@@ -8,14 +8,26 @@
 </head>
 <body>
 
-<% if notice %>
-<p><%=notice%></p>
-<%end%>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-brand">
+      <%= link_to "Client List", root_path %>
+    </div>
 
+  </div>
+</nav>
 
 <div class="container">
-  <%= yield %>
+  <% if notice %>
+  <p><%=notice%></p>
+  <%end%>
 </div>
+
+
+
+
+  <%= yield %>
+
 
 
 </body>
