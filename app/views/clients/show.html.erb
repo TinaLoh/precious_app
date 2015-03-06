@@ -1,0 +1,32 @@
+<h2>Show View Page</h2>
+
+<p>
+  First Name: <%= @client.first_name%>
+</p>
+
+<p>
+  Last Name: <%= @client.last_name%>
+</p>
+
+<p>
+  Description: <%= @client.description%>
+</p>
+
+<p>
+  Age: <%= @client.age%>
+</p>
+
+<p>
+  Gender: <%= @client.gender%>
+</p>
+
+<p>
+  Location: <%= @client.location%>
+</p>
+
+<p>
+  Guardian: <%= @client.guardian%>
+</p>
+
+<%= link_to "Edit client", edit_client_path(@client) %>
+<%= link_to "Back", root_path %>
