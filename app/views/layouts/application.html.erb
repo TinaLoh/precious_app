@@ -8,7 +8,15 @@
 </head>
 <body>
 
-<%= yield %>
+<% if notice %>
+<p><%=notice%></p>
+<%end%>
+
+
+<div class="container">
+  <%= yield %>
+</div>
+
 
 </body>
 </html>
