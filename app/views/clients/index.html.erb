@@ -2,19 +2,11 @@
 
 <%= link_to "Create a new Client", new_client_path %>
 
-<table>
-  <tr>
-    <th>
-      First Name
-    </th>
 
-    <th>
-      Last Name
-    </th>
-  </tr>
 
   <% @client.each do |client| %>
   <tr>
+    <td><%= image_tag client.image.url(:medium)%></td>
     <td><%= client.first_name %></td>
     <td><%= client.last_name %></td>
     <td><%= link_to "Show details", client_path(client)%></td>
