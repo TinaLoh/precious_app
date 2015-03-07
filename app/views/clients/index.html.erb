@@ -1,16 +1,13 @@
-<center><h2>Index for All Clients</h2></center>
-
-<%= link_to "Create a new Client", new_client_path %>
-
-
-  <% @client.each do |client| %>
-  <tr>
-    <td><%= image_tag client.image.url(:medium)%></td>
-    <td><%= client.first_name %></td>
-    <td><%= client.last_name %></td>
-    <td><%= link_to "Show details", client_path(client)%></td>
-    <td><%= link_to "Edit", edit_client_path(client)%></td>
-  </tr>
-  <%end%>
-
-</table>
+<div class="cards-wrapper">
+  <div class="cards">
+    <% @client.each do |client| %>
+    <div class="card">
+      <%= image_tag client.image.url(:medium)%>
+      <footer>
+        <div class="name"><%= client.first_name %>&nbsp;<%= client.last_name %></div>
+        <div><%= link_to "Show Details", client_path(client)%>&nbsp;|&nbsp;<%= link_to "Edit", edit_client_path(client)%></div>
+      </footer>
+    </div>
+    <%end%>
+  </div>
+</div>
