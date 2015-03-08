@@ -1,37 +1,58 @@
-<h2>Show View Page</h2>
+<div class="show-wrapper">
+  <div class="show-left">
+    <%= image_tag @client.image.url(:medium)%>
+    <h4><%= @client.description%></h4>
+  </div>
+  <div class="show-right">
+    <div class="show-description">
+      <h4><%= @client.first_name%>&nbsp;<%= @client.last_name%></h4>
+      <h5><%= @client.age%> years old</h5>
+      <h5>calls <%= @client.location%> home</h5>
+      <h5>lovingly cared for by <%= @client.guardian%></h5>
+    </div>
+    <div class="show-special">
+      SPECIAL
+    </div>
+    <div class="show-care">
+      CARE
+    </div>
+  </div>
+</div>
 
-<p>
+<!-- <h2>Show View Page</h2>
+
+<div>
   First Name: <%= @client.first_name%>
-</p>
+</div>
 
-<p>
+<div>
   Last Name: <%= @client.last_name%>
-</p>
+</div>
 
-<p>
+<div>
   Photo: <%= image_tag @client.image.url(:medium, class: "client_image")%>
-</p>
+</div>
 
-<p>
+<div>
   Description: <%= @client.description%>
-</p>
+</div>
 
-<p>
+<div>
   Age: <%= @client.age%>
-</p>
+</div>
 
-<p>
+<div>
   Gender: <%= @client.gender%>
-</p>
+</div>
 
-<p>
+<div>
   Location: <%= @client.location%>
-</p>
+</div>
 
-<p>
+<div>
   Guardian: <%= @client.guardian%>
-</p>
+</div>
 
 <%= link_to "Edit client", edit_client_path(@client) %>
 <%= link_to "Back", root_path %>
-<%= link_to "Delete client", client_path(@client), method: :delete, data: {confirm: "Are you sure?"}  %>
+<%= link_to "Delete client", client_path(@client), method: :delete, data: {confirm: "Are you sure?"}  %> -->

@@ -39,12 +39,14 @@ class ClientsController < ApplicationController
 
   private
 
+  def client_params
+    params.require(:client).permit(:first_name, :last_name, :image, :description, :age, :gender, :location, :guardian, particularities_attributes: [:id, :note, :_destroy], requirements_attributes: [:id, :step, :_destroy])
+  end
+
+
   def find_client
     @client = Client.find(params[:id])
   end
 
-  def client_params
-    params.require(:client).permit(:first_name, :last_name, :image, :description, :age, :gender, :location, :guardian)
-  end
 
 end

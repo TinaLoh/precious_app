@@ -16,6 +16,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 // INDEX PAGE ------------------------------------------
 .cards {
@@ -54,5 +57,23 @@
         color: white;
       }
     }
+  }
+}
+
+
+
+// SHOW PAGE ----------------------------------------------
+.show-wrapper {
+  display: flex;
+
+  .show-left {
+    img {
+      width: 300px;
+    }
+  }
+
+  .show-right {
+    flex: 1;
+    padding-right: 30px;
   }
 }

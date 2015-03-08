@@ -10,8 +10,6 @@
   </div>
 <% end %>
 
-
-
 <%= form_for @client, :html => {:class => 'form-horizontal'} do |f| %>
 
 <div class="form-group">
@@ -52,6 +50,18 @@
   <%= f.label :guardian%>
   <%= f.text_field :guardian%>
 </div>
+
+
+<h3>Particularities</h3>
+  <div id="particularities">
+    <%= f.fields_for :particularities do |particularity| %>
+      <%= render 'particularity_fields', :f => particularity %>
+    <%end%>
+
+    <div class="links">
+      <%= link_to_add_association 'Add particularity', f, :particularities %>
+    </div>
+  </div>
 
 <div class="form-group">
   <%= f. submit %>
