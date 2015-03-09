@@ -1,4 +1,73 @@
-<div class="show-wrapper">
+<div class="row">
+  <div class="image-card col-md-7">
+    <%= image_tag @client.image.url(:medium)%>
+    <h3><%= @client.first_name%>&nbsp;<%= @client.last_name%></h3>
+    <h4><%= @client.description%></h4>
+  </div>
+  <div class="info-card col-md-5">
+    <section>
+      <h4>ABOUT</h4>
+      <ul>
+        <li><h5><%= @client.age%> years old</h5></li>
+        <li><h5><%= @client.first_name%> calls <%= @client.location%> home</h5></li>
+        <li><h5><%= @client.first_name%> is lovingly cared for by <%= @client.guardian%></h5></li>
+      </ul>
+    </section>
+    <section>
+      <h4>REQUIREMENTS</h4>
+      <ul>
+        <% @client.requirements.each do |requirement| %>
+        <li><h5><%= requirement.step %></h5></li>
+        <%end%>
+      </ul>
+    </section>
+    <section>
+      <h4>PARTICULARITIES</h4>
+      <ul>
+        <% @client.particularities.each do |particularity| %>
+        <li><h5><%= particularity.note %></h5></li>
+        <%end%>
+      </ul>
+    </section>
+  </div>
+</div>
+
+
+<!-- <div class="show-wrapper">
+  <div class="show-left">
+    <%= image_tag @client.image.url(:medium)%>
+    <h3><%= @client.first_name%>&nbsp;<%= @client.last_name%></h3>
+    <h4><%= @client.description%></h4>
+  </div>
+  <div class="show-right">
+    <div class="info">
+      <h4>ABOUT</h4>
+      <ul>
+        <li><h5><%= @client.age%> years old</h5></li>
+        <li><h5><%= @client.first_name%> calls <%= @client.location%> home</h5></li>
+        <li><h5><%= @client.first_name%> is lovingly cared for by <%= @client.guardian%></h5></li>
+      </ul>
+    </div>
+    <div class="info">
+      <h4>REQUIREMENTS</h4>
+      <ul>
+        <% @client.requirements.each do |requirement| %>
+        <li><h5><%= requirement.step %></h5></li>
+        <%end%>
+      </ul>
+    </div>
+    <div class="info">
+      <h4>PARTICULARITIES</h4>
+      <ul>
+        <% @client.particularities.each do |particularity| %>
+        <li><h5><%= particularity.note %></h5></li>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="show-wrapper">
   <div class="show-left col-md-4">
     <%= image_tag @client.image.url(:medium)%>
     <h4><%= @client.description%></h4>
@@ -38,4 +107,4 @@
   <%= link_to "Edit client", edit_client_path(@client) %>
   <%= link_to "Back", root_path %>
   <%= link_to "Delete client", client_path(@client), method: :delete, data: {confirm: "Are you sure?"}%>
-</div>
+</div> -->
