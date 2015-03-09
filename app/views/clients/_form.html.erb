@@ -63,6 +63,17 @@
     </div>
   </div>
 
+  <h3>Requirements</h3>
+    <div id="requirements">
+      <%= f.fields_for :requirements do |requirement| %>
+        <%= render 'requirement_fields', :f => requirement %>
+      <%end%>
+
+      <div class="links">
+        <%= link_to_add_association 'Add requirement', f, :requirements %>
+      </div>
+    </div>
+
 <div class="form-group">
   <%= f. submit %>
 </div>
