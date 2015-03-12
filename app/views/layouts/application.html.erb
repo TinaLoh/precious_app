@@ -8,9 +8,6 @@
 </head>
 <body>
 
-
-
-
 <!-- <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-brand">
@@ -62,9 +59,18 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
+
+      <% if user_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Add New Client", new_client_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
       </ul>
+      <% else %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      </ul>
+      <% end %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
 </nav>
