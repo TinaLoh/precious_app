@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem "cocoon"
+
+gem 'devise'
+gem 'cocoon'
 gem 'paperclip', '~> 4.2.1'
 gem 'bootstrap-sass', '~> 3.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

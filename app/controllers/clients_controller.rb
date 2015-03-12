@@ -9,11 +9,11 @@ class ClientsController < ApplicationController
   end
 
   def new
-    @client = Client.new
+    @client = current_user.clients.build
   end
 
   def create
-    @client = Client.new(client_params)
+    @client = current_user.clients.build(client_params)
     if @client.save
       redirect_to @client, notice: "Successfully created new client!"
     else
