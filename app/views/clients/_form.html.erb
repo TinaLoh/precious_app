@@ -1,13 +1,13 @@
 <% if @client.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@client.errors.count, "error") %> prohibited this article from being saved:</h2>
+<div id="error_explanation">
+  <h2><%= pluralize(@client.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-    <ul>
+  <ul>
     <% @client.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <li><%= msg %></li>
     <% end %>
-    </ul>
-  </div>
+  </ul>
+</div>
 <% end %>
 
 <%= form_for @client, :html => {:class => 'form-horizontal'} do |f| %>
@@ -19,60 +19,60 @@
       <%= f.file_field :image %>
     </div>
 
-<div class="form-group">
-  <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'first name'%>
-</div>
+    <div class="form-group">
+      <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'first name'%>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'last name'%>
-</div>
+    <div class="form-group">
+      <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'last name'%>
+    </div>
 
-<div class="form-group">
-  <%= f.text_area :description, :class => 'form-control', :placeholder => 'description'%>
-</div>
+    <div class="form-group">
+      <%= f.text_area :description, :class => 'form-control', :placeholder => 'description'%>
+    </div>
 
-<div class="form-group">
-  <%= f.number_field :age, :class => 'form-control', :placeholder => 'age'%>
-</div>
+    <div class="form-group">
+      <%= f.number_field :age, :class => 'form-control', :placeholder => 'age'%>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :gender, :class => 'form-control', :placeholder => 'gender'%>
-</div>
+    <div class="form-group">
+      <%= f.text_field :gender, :class => 'form-control', :placeholder => 'gender'%>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :location, :class => 'form-control', :placeholder => %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :location, :class => 'form-control', :placeholder => %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :guardian, :class => 'form-control', :placeholder => 'guardian'%>
-</div>
-</div>
+    <div class="form-group">
+      <%= f.text_field :guardian, :class => 'form-control', :placeholder => 'guardian'%>
+    </div>
+  </div>
 </div>
 
 <div class="form-section col-md-8 col-md-offset-2">
   <div class="col-md-5"><h3 class="form-group">Requirements</h3></div>
   <div class="col-md-7">
-      <%= f.fields_for :requirements do |requirement| %>
-        <%= render 'requirement_fields', :f => requirement %>
-      <%end%>
-      <div class="form-group">
-        <%= link_to_add_association 'ADD REQUIREMENT', f, :requirements, :class => 'btn btn-primary btn-sm pull-right' %>
-      </div>
+    <%= f.fields_for :requirements do |requirement| %>
+    <%= render 'requirement_fields', :f => requirement %>
+    <%end%>
+    <div class="form-group">
+      <%= link_to_add_association 'ADD REQUIREMENT', f, :requirements, :class => 'btn btn-primary btn-sm pull-right' %>
     </div>
   </div>
+</div>
 
-  <div class="form-section col-md-8 col-md-offset-2">
-    <div class="col-md-5"><h3 class="form-group">Particularities</h3></div>
-    <div class="col-md-7">
-        <%= f.fields_for :particularities do |particularity| %>
-          <%= render 'particularity_fields', :f => particularity %>
-        <%end%>
+<div class="form-section col-md-8 col-md-offset-2">
+  <div class="col-md-5"><h3 class="form-group">Particularities</h3></div>
+  <div class="col-md-7">
+    <%= f.fields_for :particularities do |particularity| %>
+    <%= render 'particularity_fields', :f => particularity %>
+    <%end%>
 
-        <div class="form-group">
-          <%= link_to_add_association 'ADD PARTICULARITY', f, :particularities, :class => 'btn btn-primary btn-sm pull-right' %>
-        </div>
-      </div>
+    <div class="form-group">
+      <%= link_to_add_association 'ADD PARTICULARITY', f, :particularities, :class => 'btn btn-primary btn-sm pull-right' %>
     </div>
+  </div>
+</div>
 
 <div class="form-section col-md-8 col-md-offset-2">
   <%= f.button :submit, class: "btn btn-primary btn-sm pull-right col-md-7" %>
