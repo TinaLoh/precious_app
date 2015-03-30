@@ -12,69 +12,70 @@
 
 <%= form_for @client, :html => {:class => 'form-horizontal'} do |f| %>
 
-<div class="form-group">
-  <%= f.label :first_name%>
-  <%= f.text_field :first_name%>
-</div>
-
-<div class="form-group">
-  <%= f.label :last_name%>
-  <%= f.text_field :last_name%>
-</div>
-
-<div class="form-group">
-  <%= f.file_field :image %>
-</div>
-
-<div class="form-group">
-  <%= f.label :description%>
-  <%= f.text_field :description%>
-</div>
-
-<div class="form-group">
-  <%= f.label :age%>
-  <%= f.number_field :age%>
-</div>
-
-<div class="form-group">
-  <%= f.label :gender%>
-  <%= f.text_field :gender%>
-</div>
-
-<div class="form-group">
-  <%= f.label :location%>
-  <%= f.text_field :location%>
-</div>
-
-<div class="form-group">
-  <%= f.label :guardian%>
-  <%= f.text_field :guardian%>
-</div>
-
-
-<h3>Particularities</h3>
-  <div id="particularities">
-    <%= f.fields_for :particularities do |particularity| %>
-      <%= render 'particularity_fields', :f => particularity %>
-    <%end%>
-
-    <div class="links">
-      <%= link_to_add_association 'Add particularity', f, :particularities %>
+<div class="form-section col-md-8 col-md-offset-2">
+  <div class="col-md-5"><h3 class="form-group">General</h3></div>
+  <div class="col-md-7">
+    <div class="form-group">
+      <%= f.file_field :image %>
     </div>
-  </div>
 
-  <h3>Requirements</h3>
-    <div id="requirements">
+<div class="form-group">
+  <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'first name'%>
+</div>
+
+<div class="form-group">
+  <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'last name'%>
+</div>
+
+<div class="form-group">
+  <%= f.text_area :description, :class => 'form-control', :placeholder => 'description'%>
+</div>
+
+<div class="form-group">
+  <%= f.number_field :age, :class => 'form-control', :placeholder => 'age'%>
+</div>
+
+<div class="form-group">
+  <%= f.text_field :gender, :class => 'form-control', :placeholder => 'gender'%>
+</div>
+
+<div class="form-group">
+  <%= f.text_field :location, :class => 'form-control', :placeholder => %>
+</div>
+
+<div class="form-group">
+  <%= f.text_field :guardian, :class => 'form-control', :placeholder => 'guardian'%>
+</div>
+</div>
+</div>
+
+<div class="form-section col-md-8 col-md-offset-2">
+  <div class="col-md-5"><h3 class="form-group">Requirements</h3></div>
+  <div class="col-md-7">
       <%= f.fields_for :requirements do |requirement| %>
         <%= render 'requirement_fields', :f => requirement %>
       <%end%>
+      <div class="form-group">
+        <%= link_to_add_association 'ADD REQUIREMENT', f, :requirements, :class => 'btn btn-primary btn-sm pull-right' %>
+      </div>
+    </div>
+  </div>
 
-      <div class="links">
-        <%= link_to_add_association 'Add requirement', f, :requirements %>
+  <div class="form-section col-md-8 col-md-offset-2">
+    <div class="col-md-5"><h3 class="form-group">Particularities</h3></div>
+    <div class="col-md-7">
+        <%= f.fields_for :particularities do |particularity| %>
+          <%= render 'particularity_fields', :f => particularity %>
+        <%end%>
+
+        <div class="form-group">
+          <%= link_to_add_association 'ADD PARTICULARITY', f, :particularities, :class => 'btn btn-primary btn-sm pull-right' %>
+        </div>
       </div>
     </div>
 
-<div class="form-group">
-  <%= f.button :submit, class: "btn btn-primary" %>
+<div class="form-section col-md-8 col-md-offset-2">
+  <%= f.button :submit, class: "btn btn-primary btn-sm pull-right col-md-7" %>
 </div>
+
 <%end%>

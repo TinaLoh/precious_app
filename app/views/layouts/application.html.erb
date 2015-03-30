@@ -24,10 +24,25 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-
+      <% if current_user.present? %>
+      <li><%= link_to "ADD CLIENT", new_client_path %</li>
+      <li><%= link_to "SHOW CLIENTS", '/'</li>
+      <li><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete%></li>
+      <% else %>
+      <li><%= link_to "LOG IN", new_user_session_path %></li>
+      <li><%= link_to "SIGN UP", new_user_registration_path %></li>
+      <% end %>
     </ul>
-  </li>
-</ul> -->
+  </div>
+</div>
+</nav>
+
+<div class="container-fluid navbar-offset">
+  <%= yield %>
+</div>
+
+</body>
+</html>
 
 <!-- <form class="navbar-form navbar-left" role="search">
   <div class="form-group">
@@ -36,47 +51,17 @@
   <button type="submit" class="btn btn-default">Submit</button>
 </form> -->
 
-
-<form class="navbar-form navbar-left" role="search">
+<!-- <form class="navbar-form navbar-left" role="search">
 <%= form_tag(clients_path, :method => "get", class: "navbar-form", id: "search-form") do %>
   <div class="form-group">
     <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-inline"%>
     <button type="submit" class="btn btn=default">Submit</button>
   </div>
 <% end %>
-</form>
+</form> -->
 
-<% if user_signed_in? %>
-<ul class="nav navbar-nav navbar-right">
-  <li><%= link_to "Add New Client", new_client_path %></li>
-  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-</ul>
-<% else %>
-<ul class="nav navbar-nav navbar-right">
-  <li><%= link_to "Sign Up", new_user_registration_path %></li>
-  <li><%= link_to "Sign In", new_user_session_path %></li>
-</ul>
-<% end %>
-</div><!-- /.navbar-collapse -->
-</div><!-- /.container -->
-</nav>
-
-
-
-
-<div class="container">
+<!-- <div class="container">
   <% if notice %>
   <p><%=notice%></p>
   <%end%>
-</div>
-
-
-
-<div class="container">
-  <%= yield %>
-</div>
-
-
-
-</body>
-</html>
+</div> -->
