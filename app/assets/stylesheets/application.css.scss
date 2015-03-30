@@ -28,7 +28,6 @@ body {
 
 input {
   font-family: 'Lato', sans-serif;
-  font-size: 14px !important;
 }
 
 img{
@@ -132,7 +131,9 @@ h6 {
 }
 
 .navbar-nav {
-  font-size: 13px;
+  li {
+    border-bottom: 80px;
+  }
 }
 
 .navbar-offset {
@@ -158,17 +159,11 @@ h6 {
 .form-section {
   border-top: 1px solid #dddddd;
   padding: 10px 0;
-
-  h1 {
-    padding-bottom: 30px;
-  }
 }
 
 // SHOW PAGE --------------------------
 
 .page-links {
-  font-size: 13px;
-
   @media (min-width: 768px) {
     text-align: right;
   }
@@ -207,5 +202,5 @@ video {
   .panel-title {
     margin-bottom: 30px;
   }
-  
+
 }
