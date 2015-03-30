@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'bootstrap_form'
 gem 'devise'
 gem 'cocoon'
 gem 'paperclip', '~> 4.2.1'
