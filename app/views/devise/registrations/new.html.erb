@@ -1,0 +1,61 @@
+<%= video_tag "home.mp4", :poster => "home.jpg", :autoplay => true, :autobuffer => true, :controls => false, :loop => true %>
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-7">
+    <div class="panel panel-default panel-login">
+      <div class="panel-body">
+        <div class="panel-heading">Pet Care Like A Boss</div>
+        <div class="panel-title">Created for independent pet caretakers to better serve their precious clients</div>
+        <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.email_field :email, hide_label: true, placeholder: "Email", class: "input-lg"%>
+          <%= f.password_field :password, hide_label: true, placeholder: "Password", class: "input-lg" %>
+          <%= f.password_field :password_confirmation, hide_label: true, placeholder: "Confirm password", class: "input-lg"%>
+          <%= f.submit "Sign Up", class: "btn btn-default btn-lg btn-block" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--
+<video autoplay="" loop="loop" poster="https://d2cvtsn5f5bbpj.cloudfront.net/pug/video/home/home.jpg">
+  <source src="https://d2cvtsn5f5bbpj.cloudfront.net/pug/video/home/home.mp4" type="video/mp4">
+  <img src="https://d2cvtsn5f5bbpj.cloudfront.net/pug/video/home/home.jpg">
+</video> -->
+
+//DEVISE ORIGINAL
+
+<!-- <h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @validatable %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %> -->
