@@ -17,7 +17,9 @@ class Client < ActiveRecord::Base
   # It returns the clients whose names contain one or more words that form the query
   def self.search(query)
     # where(:first_name, query) -> This would return an exact match of the query
-    where("first_name like ?", "%#{query}%")
+
+    where(['LOWER(first_name) LIKE ? OR LOWER(last_name) LIKE ?', "%#{query.downcase}%", "%#{query.downcase}%"])
+    # where("LOWER(first_name) or LOWER(last_name) like ?", "%#{query.downcase}%")
   end
 
 end
