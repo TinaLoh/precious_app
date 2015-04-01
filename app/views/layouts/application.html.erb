@@ -24,6 +24,16 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <% if current_page?('/') %>
+          <form class="navbar-form navbar-left" role="search">
+            <%= form_tag(clients_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+              <div class="form-group">
+                <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control"%>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </div>
+            <% end %>
+          </form>
+        <% end %>
         <% if current_user.present? %>
             <li><%= link_to "ADD CLIENT", new_client_path %></li>
             <li><%= link_to "SHOW CLIENTS", '/' %></li>
@@ -31,7 +41,7 @@
             <% else %>
             <li><%= link_to "LOG IN", new_user_session_path %></li>
             <li><%= link_to "SIGN UP", new_user_registration_path %></li>
-            <% end %>
+        <% end %>
     </ul>
   </div>
 </div>
