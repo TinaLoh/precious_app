@@ -1,0 +1,47 @@
+
+
+<div id="map-canvas2"></div>
+
+
+<script type="text/javascript">
+function initialize() {
+  var mapOptions = {
+    center: {lat:37.779734, lng: -122.416936},
+    zoom: 13
+  };
+  var myMap = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions);
+
+  console.log(gon.clients)
+
+  var infoWindow = new google.maps.InfoWindow();
+
+    function createInfoWindow(marker, popupContent) {
+        google.maps.event.addListener(marker, 'click', function () {
+            infoWindow.setContent(popupContent);
+            infoWindow.open(myMap, this);
+        });
+    }
+
+    for(var i = 0; i < gon.clients.length; i++) {
+      if(gon.clients[i].latitude) {
+        var myLatlng = new google.maps.LatLng(gon.clients[i].latitude, gon.clients[i].longitude);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: myMap,
+            title:"HI TINA!"
+        });
+
+      var contentString = "<h2>" + gon.clients[i].first_name + "</h2><h3><a href='/clients/" + gon.clients[i].id + "'>Details</a></h3>"
+
+      createInfoWindow(marker, contentString);
+      }
+    }
+
+
+
+
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>

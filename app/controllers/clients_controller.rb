@@ -7,11 +7,13 @@ class ClientsController < ApplicationController
     if params[:search]
       @clients = Client.search(params[:search]).order("created_at DESC")
     else
-      @clients = Client.all.order("created_at DESC")    
+      @clients = Client.all.order("created_at DESC")
     end
   end
 
   def show
+    gon.latitude = @client.latitude
+    gon.longitude = @client.longitude
   end
 
   def new
@@ -41,6 +43,11 @@ class ClientsController < ApplicationController
   def destroy
     @client.destroy
     redirect_to root_path, notice: "Client was successfully deleted!"
+  end
+
+  def map
+    @clients = Client.all
+    gon.clients = @clients
   end
 
   private

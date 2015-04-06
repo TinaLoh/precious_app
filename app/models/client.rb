@@ -1,6 +1,9 @@
 class Client < ActiveRecord::Base
   belongs_to :user
 
+  geocoded_by :location
+  after_validation :geocode   
+
   has_many :particularities, dependent: :destroy
   has_many :requirements, dependent: :destroy
 

@@ -5,6 +5,8 @@ gem 'devise'
 gem 'cocoon'
 gem 'paperclip', '~> 4.2.1'
 gem 'bootstrap-sass', '~> 3.3.1'
+gem 'geocoder'
+gem 'gon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
