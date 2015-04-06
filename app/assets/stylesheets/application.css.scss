@@ -204,3 +204,25 @@ video {
   }
 
 }
+
+
+
+
+
+.navbar-brand {
+  .brand-animated {
+    opacity: 0;
+  }
+  .brand-still {
+    opacity: 1;
+  }
+
+  &:hover {
+    .brand-animated {
+      opacity: 1;
+    }
+    .brand-still {
+      opacity: 0;
+    }
+  }
+}
