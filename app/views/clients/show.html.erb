@@ -1,12 +1,7 @@
-
-
-<h1>MAP BELOW:</h1>
-
-<div id="map-canvas"></div>
-
 <div class="row col-md-8 col-md-offset-2">
   <div class="col-md-3">
     <%= image_tag @client.image.url(:medium), :class => 'img-responsive'%>
+    <div id="map-canvas"></div>
   </div>
   <div class="col-md-6">
   <h2><%= @client.first_name%> <%= @client.last_name%></h2>
@@ -53,7 +48,8 @@
 function initialize() {
   var mapOptions = {
     center: { lat: gon.latitude, lng: gon.longitude},
-    zoom: 14
+    zoom: 14,
+    disableDefaultUI: true
   };
   var myMap = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -67,6 +63,7 @@ function initialize() {
       });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'page:load', initialize);
 
 </script>
 

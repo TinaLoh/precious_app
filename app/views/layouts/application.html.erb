@@ -7,12 +7,9 @@
     <%= csrf_meta_tags %>
     <%= include_gon %>
 
-
     <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA01exFIoIAsVafMcAYaYAwBmnYz9QbPBc">
   </script>
-
-
 
   </head>
 <body>
@@ -49,7 +46,8 @@
         <% end %>
         <% if current_user.present? %>
             <li><%= link_to "ADD CLIENT", new_client_path %></li>
-            <li><%= link_to "SHOW CLIENTS", '/' %></li>
+            <li><%= link_to "LIST CLIENTS", '/' %></li>
+            <li><%= link_to "MAP CLIENTS", '/map' %></li>
             <li><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></li>
             <% else %>
             <li><%= link_to "LOG IN", new_user_session_path %></li>
