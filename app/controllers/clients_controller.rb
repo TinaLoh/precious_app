@@ -46,8 +46,15 @@ class ClientsController < ApplicationController
   end
 
   def map
+    client_data = []
     @clients = Client.all
+
+    @clients.each do |client|
+      client_data.push(client.image.url)
+    end
+
     gon.clients = @clients
+    gon.images = client_data
   end
 
   private

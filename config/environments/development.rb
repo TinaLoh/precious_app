@@ -36,6 +36,15 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_host_name => 's3-us-west-2.amazonaws.com',
+    :s3_credentials => {
+      :bucket => 'precious-app',
+      :access_key_id => ENV['AWS_ACCESS_KEY'],
+      :secret_access_key => ENV['AWS_SECRET_KEY']
+    }
+  }
 # Needed for gem Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Raises error for missing translations
