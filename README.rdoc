@@ -1,4 +1,14 @@
-== README
+My_Precious App
+
+Heroku URL is https://immense-lowlands-4549.herokuapp.com/
+
+This app was developed as a tracking tool which allows independent pet caretakers to operate more efficiently and professionally as mini-businesses.  This is to better serve their clients and build satisfaction through customized care for the beloved pets.
+
+To run on http://localhost:3000
+
+Rake db:migrate
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
